@@ -1,222 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade with Mohit Agrawal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4507799306159480');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4507799306159480&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-<title>Trade With Munaaf</title>
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #112240;
+      --navy-light: #1a3560;
+      --gold: #c8972a;
+      --gold-light: #e8b84b;
+      --white: #f5f8ff;
+      --muted: #8899bb;
+      --card-bg: #0e1e3a;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+    /* ── BACKGROUND TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26,53,96,0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(200,151,42,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-body{
-background:#0f172a;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-color:#fff;
-}
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
 
-/* CARD */
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      background: rgba(200,151,42,0.12);
+      border-bottom: 1px solid rgba(200,151,42,0.25);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+    .top-bar span.dot {
+      width: 7px; height: 7px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
 
-.container{
-width:95%;
-max-width:420px;
-padding:30px 25px;
-border-radius:18px;
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 28px 0 20px;
+    }
 
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
+    .avatar-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .avatar-ring {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--navy-light));
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--navy-mid);
+    }
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    .sebi-badge {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      border: 2px solid var(--navy);
+    }
 
-border:1px solid rgba(255,255,255,0.08);
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
-text-align:center;
-}
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .hero-title span {
+      color: var(--gold);
+    }
 
-/* LOGO */
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
 
-.logo{
-width:80px;
-height:80px;
-border-radius:50%;
-border:2px solid #FFD700;
-margin-bottom:12px;
-}
+    .hero-cta-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
 
-/* TEXT */
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      margin-top: 28px;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid rgba(200,151,42,0.2);
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .trust-pill .icon { font-size: 14px; }
 
-h1{
-font-size:22px;
-color:#FFD700;
-margin-bottom:6px;
-}
+    /* ── BENEFITS ── */
+    .benefits {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 24px 22px;
+      margin-bottom: 28px;
+    }
+    .benefits-title {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .benefit-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .benefit-item:first-of-type { padding-top: 0; }
+    .benefit-check {
+      width: 22px; height: 22px;
+      background: rgba(200,151,42,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .benefit-text {
+      font-size: 14px;
+      color: var(--white);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .benefit-text strong { color: var(--gold-light); font-weight: 600; }
 
-h2{
-font-size:15px;
-opacity:0.9;
-margin-bottom:10px;
-}
+    /* ── SEBI BOX ── */
+    .sebi-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(200,151,42,0.07);
+      border: 1px solid rgba(200,151,42,0.3);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+    .sebi-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .sebi-text { font-size: 13px; line-height: 1.5; color: var(--white); }
+    .sebi-text strong { color: var(--gold-light); display: block; margin-bottom: 2px; font-size: 14px; }
 
-.sub{
-font-size:13px;
-opacity:0.7;
-margin-bottom:18px;
-}
+    /* ── TIMER ── */
+    .timer-wrap {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .timer-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .timer-digits {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .timer-block {
+      background: var(--card-bg);
+      border: 1px solid rgba(200,151,42,0.2);
+      border-radius: 10px;
+      padding: 10px 16px;
+      min-width: 64px;
+      text-align: center;
+    }
+    .timer-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .timer-unit {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+    .timer-sep {
+      font-size: 24px;
+      color: var(--gold);
+      align-self: center;
+      margin-top: -8px;
+    }
 
-/* BUTTON */
+    /* ── CTA BUTTON ── */
+    .cta-wrap {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #229ED9 0%, #1a7fb5 100%);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+      max-width: 380px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 32px rgba(34,158,217,0.35), 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(34,158,217,0.45), 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .cta-btn:active { transform: translateY(0); }
+    .tg-icon { font-size: 22px; }
 
-.btn{
-display:block;
-text-decoration:none;
-background:#22c55e;
-color:#000;
-font-weight:700;
-padding:16px;
-border-radius:10px;
-margin:12px 0;
-transition:0.3s;
-}
+    .cta-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
 
-.btn:hover{
-background:#16a34a;
-transform:scale(1.03);
-}
+    /* ── SOCIAL PROOF ── */
+    .social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+    .avatars {
+      display: flex;
+    }
+    .mini-avatar {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--navy-light);
+      border: 2px solid var(--navy);
+      margin-left: -6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .mini-avatar:first-child { margin-left: 0; }
 
-/* TRUST BOX */
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      font-size: 11px;
+      color: rgba(136,153,187,0.5);
+      line-height: 1.8;
+    }
+    .footer a { color: rgba(200,151,42,0.6); text-decoration: none; }
 
-.trust{
-background:rgba(0,255,150,0.08);
-padding:10px;
-border-radius:10px;
-font-size:13px;
-margin-bottom:15px;
-border:1px solid rgba(0,255,150,0.2);
-}
-
-/* LIST */
-
-.points{
-list-style:none;
-font-size:14px;
-text-align:left;
-margin:15px 0;
-}
-
-.points li{
-margin:8px 0;
-}
-
-/* URGENCY */
-
-.timer{
-margin-top:10px;
-font-size:13px;
-color:#facc15;
-}
-
-/* SOCIAL PROOF */
-
-.proof{
-margin-top:12px;
-font-size:12px;
-opacity:0.7;
-}
-
-/* FOOTER BRAND */
-
-.footer{
-margin-top:20px;
-font-size:12px;
-opacity:0.6;
-}
-
-.footer a{
-color:#38bdf8;
-text-decoration:none;
-font-weight:600;
-}
-
-.footer a:hover{
-text-decoration:underline;
-}
-
-/* RISK */
-
-.risk{
-margin-top:10px;
-font-size:11px;
-opacity:0.5;
-}
-
-</style>
+    /* ── FADE-IN ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .fade-up:nth-child(1) { animation-delay: 0.1s; }
+    .fade-up:nth-child(2) { animation-delay: 0.2s; }
+    .fade-up:nth-child(3) { animation-delay: 0.3s; }
+    .fade-up:nth-child(4) { animation-delay: 0.4s; }
+    .fade-up:nth-child(5) { animation-delay: 0.5s; }
+    .fade-up:nth-child(6) { animation-delay: 0.6s; }
+    .fade-up:nth-child(7) { animation-delay: 0.7s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span class="dot"></span>
+    SEBI Registered Research Analyst &nbsp;·&nbsp; INH000011954
+  </div>
 
-<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="logo">
+  <div class="container">
 
-<h1>TRADE WITH MUNAAF</h1>
-<h2>NIFTY • BANKNIFTY • OPTIONS</h2>
+    <!-- HERO -->
+    <div class="hero fade-up">
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <img src="images/trade-with-mohit-agrawal.jpg" alt="Mohit Agrawal" />
+          </div>
+        </div>
+        <div class="sebi-badge">✓ SEBI Reg.</div>
+      </div>
+      <p class="hero-eyebrow">Research & Market Education</p>
+      <h1 class="hero-title">Learn with<br /><span>Mohit Agrawal</span></h1>
+      <p class="hero-sub">Daily Market Research • Equity Research • Educational Insights</p>
 
-<p class="sub">
-Daily Intraday Trading Signals & Analysis
-</p>
+      <!-- ABOVE-FOLD CTA -->
+      <a class="cta-btn" href="https://t.me/+wNgpJZrCpykzNTk1" target="_blank" rel="noopener"
+        onclick="fbq('track', 'Subscribe', {value: '0.00', currency: 'INR', predicted_ltv: '0.00'});">
+        <span class="tg-icon">✈️</span>
+        Join Research Community — Free
+      </a>
+      <p class="hero-cta-note">Access research updates and educational content.</p>
 
-<!-- TOP BUTTON -->
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-🚀 Join Free Telegram Channel
-</a>
+      <!-- SOCIAL PROOF -->
+      <div class="hero-social-proof">
+        <div class="avatars">
+          <div class="mini-avatar">R</div>
+          <div class="mini-avatar">S</div>
+          <div class="mini-avatar">A</div>
+          <div class="mini-avatar">P</div>
+          <div class="mini-avatar">+</div>
+        </div>
+        <span>Join our growing <strong style="color:var(--white)">research</strong> community</span>
+      </div>
+    </div>
 
-<div class="trust">
-✔ Trusted by 5,000+ Traders <br>
-✔ Daily Consistent Setups
-</div>
+    <!-- TRUST PILLS -->
+    <div class="trust-strip fade-up">
+      <div class="trust-pill"><span class="icon">🏛️</span> SEBI Registered</div>
+      <div class="trust-pill"><span class="icon">📊</span> Market Research</div>
+      <div class="trust-pill"><span class="icon">🇮🇳</span> Made for Indian Markets</div>
+    </div>
 
-<ul class="points">
-<li>✔ 5–7 High Probability Trades</li>
-<li>✔ Exact Entry, SL & Target</li>
-<li>✔ Beginner Friendly Guidance</li>
-<li>✔ Live Market Updates</li>
-</ul>
+    <!-- BENEFITS -->
+    <div class="benefits fade-up">
+      <p class="benefits-title">What you get inside</p>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <p class="benefit-text"><strong>Understanding Options Markets</strong> — Learn options concepts through research-backed educational content.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <p class="benefit-text"><strong>Research & Market Analysis</strong> — Research coverage on selected companies and sectors.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <p class="benefit-text"><strong>Market Research Support</strong> — Research support for platform-related queries.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <p class="benefit-text"><strong>Educational Content</strong> — Research explainers, market observations and educational webinars.</p>
+      </div>
+    </div>
 
-<!-- BOTTOM BUTTON -->
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-🚀 Join Free Telegram Channel
-</a>
+    <!-- SEBI BOX -->
+    <div class="sebi-box fade-up">
+      <div class="sebi-icon">🛡️</div>
+      <div class="sebi-text">
+        <strong>SEBI Registered Research Analyst</strong>
+        Mohit Agrawal is a SEBI Registered Research Analyst (Registration No. INH000011954). Research services are offered in accordance with applicable SEBI regulations.
+      </div>
+    </div>
 
-<div class="timer">
-⏳ Free Access Closing Soon
-</div>
+    <!-- CTA -->
+    <div class="cta-wrap fade-up">
+      <a class="cta-btn" href="https://t.me/+wNgpJZrCpykzNTk1" target="_blank" rel="noopener"
+        onclick="fbq('track', 'Subscribe', {value: '0.00', currency: 'INR', predicted_ltv: '0.00'});">
+        <span class="tg-icon">✈️</span>
+        Join Research Community — Free
+      </a>
+      <p class="cta-note">Access research updates and educational content./p>
+    </div>
 
-<div class="proof">
-📈 Limited Seats • Active Community
-</div>
+    <!-- SOCIAL PROOF -->
+    <div class="social-proof fade-up">
+      <div class="avatars">
+        <div class="mini-avatar">R</div>
+        <div class="mini-avatar">S</div>
+        <div class="mini-avatar">A</div>
+        <div class="mini-avatar">P</div>
+        <div class="mini-avatar">+</div>
+      </div>
+      <span>Join our growing <strong style="color:var(--white)">research</strong> community</span>
+    </div>
 
-<p class="risk">
-⚠ Market investments are subject to risk
-</p>
+    <!-- FOOTER -->
+    <div class="footer fade-up">
+      <p>© 2024 Trade with Mohit Agrawal. All rights reserved.</p>
+      <p>SEBI Registered Research Analyst · Reg. No. INH000011954</p>
+      <p style="margin-top:8px;">
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Disclaimer</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Use</a>
+      </p>
+      <p style="margin-top:10px; font-size:10px;">
+        Investments in securities are subject to market risks. Research services are intended for educational and informational purposes and should not be construed as assured returns or guaranteed investment outcomes. Please read all related documents carefully before investing.
+      </p>
+    </div>
 
-<!-- CLEAN FOOTER -->
-<div class="footer">
-Powered by 
-<a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">
-AdsBuild Agency
-</a>
-</div>
+  </div>
 
-</div>
+  <script>
+    // Countdown timer — resets to 10 mins each visit
+    let total = 10 * 60 - 1;
+    const minEl = document.getElementById('t-min');
+    const secEl = document.getElementById('t-sec');
+    const tick = () => {
+      if (total <= 0) { total = 10 * 60; }
+      const m = Math.floor(total / 60);
+      const s = total % 60;
+      minEl.textContent = String(m).padStart(2,'0');
+      secEl.textContent = String(s).padStart(2,'0');
+      total--;
+    };
+    tick();
+    setInterval(tick, 1000);
+  </script>
 
 </body>
 </html>
